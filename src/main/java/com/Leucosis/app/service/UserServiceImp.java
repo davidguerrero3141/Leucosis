@@ -16,9 +16,9 @@ public class UserServiceImp implements IUserService{
 	private IUserDao userDao;
 	
 	@Override
-	public User getUser(int idUser) {
+	public User getUser(Long idUser) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.getUserById(idUser);
 	}
 
 	@Override
