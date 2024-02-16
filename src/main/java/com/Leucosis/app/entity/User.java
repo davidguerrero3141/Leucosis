@@ -1,56 +1,56 @@
 package com.Leucosis.app.entity;
 
 import java.sql.Date;
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.*;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import com.Leucosis.app.enums.RoleEnum;
 
-@SuppressWarnings("deprecation")
 @Entity
-@Table(name = "user")	
+@Table(name = "user")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_user")
+	@Column(name = "id_user")
 	private Long idUser;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "last_name")
 	private String lastName;
-	
+
 	@Column(name = "user_name")
 	private String userName;
-	
+
 	@Column(name = "identification_number")
 	private String identificationNumber;
-	
+
 	@Column(name = "telephone")
 	private String telephone;
-	
+
 	@Column(name = "address")
 	private String address;
-	
+
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "password")
 	private String password;
 
 	@Column(name = "birthDate")
 	private Date birthDate;
-	
+
 	@Column(name = "state")
 	private Boolean state;
-	
-    @ManyToMany
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Role> roles;
+
+	List<RoleEnum> roles;
+
+//	@ManyToMany
+//	@LazyCollection(LazyCollectionOption.FALSE)
+//	private Set<Role> roles;
 
 	public Long getIdUser() {
 		return idUser;
@@ -140,12 +140,14 @@ public class User {
 		this.state = state;
 	}
 
-	public Set<Role> getRoles() {
+	public List<RoleEnum> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(List<RoleEnum> roles) {
 		this.roles = roles;
 	}
+
 	
+
 }

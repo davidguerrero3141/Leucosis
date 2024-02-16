@@ -1,14 +1,27 @@
 package com.Leucosis.app.dto;
 
+import java.util.List;
+
 public class SignUpDto {
 
 	private String name;
     private String username;
     private String email;
     private String password;
+    List<String> roles;
+    
     public SignUpDto() {
     }
-    public String getName() {
+    
+    public SignUpDto(String name, String username, String email, String password, List<String> roles) {
+		this.name = name;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.roles = roles;
+	}
+
+	public String getName() {
         return name;
     }
     public void setName(String name) {
@@ -32,4 +45,14 @@ public class SignUpDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+    
+    
 }

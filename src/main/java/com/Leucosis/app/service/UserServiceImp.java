@@ -16,21 +16,45 @@ public class UserServiceImp implements IUserService{
 	private IUserDao userDao;
 	
 	@Override
-	public User getUser(Long idUser) {
+	public User getUserById(Long idUser) {
 		// TODO Auto-generated method stub
 		return userDao.getUserById(idUser);
 	}
 
 	@Override
-	public void addUser(User user) {
+	public User addUser(User user) {
 		
-		userDao.save(user);
+		return userDao.save(user);
 	}
 
 	@Override
 	public List<User> getAllUser() {
 		// TODO Auto-generated method stub
 		return (List<User>) userDao.findAll();
+	}
+
+	@Override
+	public User findByUsernameOrEmail(String Username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.existsByUserName(userName);
+	}
+
+	@Override
+	public boolean existsByEmail(String email) {
+		// TODO Auto-generated method stub
+		return userDao.existsByEmail(email);
+	}
+
+	@Override
+	public User getUserByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.getUserByUserName(userName);
 	}
 
 }

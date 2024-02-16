@@ -2,10 +2,17 @@ package com.Leucosis.app.dto;
 
 public class LoginDto {
 
+
 	private String username;
-    private String password;   
-    public LoginDto() {      }   
-    public String getUsername() {      
+	private String password;  
+    
+    
+    
+    public LoginDto(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+	public String getUsername() {      
         return username;   
     }   
     public void setUsername(String username) {      
