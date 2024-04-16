@@ -43,9 +43,10 @@ public class UserEntityService {
         return userService.addUser(mapUserFromDto(user));
     }
 
-    public JwtTokenDto login(LoginDto dto) {
+    public JwtTokenDto login(String email, String contrasena) {
+    	
         Authentication authentication =
-                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword()));
+                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, contrasena));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtProvider.generateToken(authentication);
         return new JwtTokenDto(token);

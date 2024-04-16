@@ -14,7 +14,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_user")
-	private Long idUser;
+	private long idUser;
 
 	@Column(name = "name")
 	private String name;
@@ -24,6 +24,9 @@ public class User {
 
 	@Column(name = "user_name")
 	private String userName;
+
+	@Column(name = "type_id")
+	private String typeId;
 
 	@Column(name = "identification_number")
 	private String identificationNumber;
@@ -51,14 +54,15 @@ public class User {
 //	@ManyToMany
 //	@LazyCollection(LazyCollectionOption.FALSE)
 //	private Set<Role> roles;
-
-	public Long getIdUser() {
+	
+	public long getIdUser() {
 		return idUser;
 	}
 
-	public void setIdUser(Long idUser) {
+	public void setIdUser(long idUser) {
 		this.idUser = idUser;
 	}
+
 
 	public String getName() {
 		return name;
@@ -82,6 +86,14 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	
+	public String getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
 	}
 
 	public String getIdentificationNumber() {
@@ -147,7 +159,5 @@ public class User {
 	public void setRoles(List<RoleEnum> roles) {
 		this.roles = roles;
 	}
-
-	
 
 }

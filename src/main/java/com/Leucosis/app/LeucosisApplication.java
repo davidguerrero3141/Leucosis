@@ -12,14 +12,4 @@ public class LeucosisApplication {
 		SpringApplication.run(LeucosisApplication.class, args);
 		
 	}
-	
-//    @Bean
-//    public CommandLineRunner demo(IRoleRepositoryDao roleRepo) {
-//        return (args) -> {
-//            Role role=new Role();
-//            role.setName("ROLE_ADMIN");
-//            roleRepo.save(role);
-//        };
-//    }
-
 }
